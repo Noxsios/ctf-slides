@@ -1,0 +1,17 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #c2870a !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+p, li {
+  color: #94ff99 !important;
+}
+
+img {
+  max-width: 50% !important;
+}
