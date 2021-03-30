@@ -1,4 +1,4 @@
-# Digital Distractions presentation
+# Battle of Gettysburg presentation
 
 ## Setup
 

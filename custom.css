@@ -5,13 +5,20 @@ h4,
 h5,
 h6 {
   color: #c2870a !important;
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
-p, li {
+p,
+li {
   color: #94ff99 !important;
 }
 
 img {
   max-width: 50% !important;
+  max-height: 12em !important;
+}
+
+.present > p,
+li {
+  font-size: 2vw;
 }

@@ -1,14 +1,12 @@
-### Dealing with Distractions
+### The Battle of Gettysburg - _Pickett's Charge_
 
-#### 22 March 2021
+#### July 1–3, 1863
 
 #### `Harry Randazzo`
 
 -----
 
 Navigate using your arrow keys. If you see a &darr; there is content below. Try it now!
-
-For each distraction, I will have some strategies on the slide _below_.
 
 ---
 
@@ -20,89 +18,67 @@ To view all slides press the `ESC` key, otherwise press `>` to move to the next 
 
 ## Preface
 
-In today's age of technology, distractions are all around us.  In this web presentation I will display _a few_
-such distractions, and some solutions / steps you can take to alleviate their impact on your productivitiy.
+The _Battle of Gettysburg_ is commonly known to be the turning point of the Civil War.  It marked the last time the South
+attempted an invasion of the North, and later led to the Gettysburg Address, one of the finest works of literature.
+
+The overall three day battle is far too dense and complex for this assignment, so I have chosen to focus on the third day,
+_Pickett's Charge_.
 
 -----
 
-## Noise / Sound
+## General Robert E. Lee
 
-![Noise Image](https://images.pexels.com/photos/3851254/pexels-photo-3851254.jpeg)
+![Lee](https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Robert_Edward_Lee.jpg/1200px-Robert_Edward_Lee.jpg)
 
 ---
 
-## Solution:
+## A Tactical Genius
 
-- Noise cancelling headphones, I recommend [these](https://www.amazon.com/gp/product/B0723CYHPZ/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1).
-- If able to move, move to a _quieter_ location.
-- Make sure to fully turn off the TV, dont just put it on low, even the moving images will distract you.
-- If listening to music, make sure it is not too loud, else you have defeated the point!
+- Lee displayed "expert use of the Napoleonic turning movement as described by Antoine de Jo-mini".
+- Goal was to bring the North to the peace negotiating table through costly defeats in Northern territory.
+- "Became so engrossed with the tactical details and the possibility of achieving an Austerlitz 
+that he lost his focus on directing a campaign linked to political ends."
+- Sought to achieve a strategic and operational objective through a single tactical victory.
 
 -----
 
-## Social Media / Messaging
+## Day 1
 
-![Social Media](https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg)
+![Day_1](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Gettysburg_Battle_Map_Day1.png/706px-Gettysburg_Battle_Map_Day1.png)
 
 ---
 
-## Solution:
+## The Prelude
 
-- Place phone on mute / silent during work hours.
-- Use [Focus Assist](https://support.microsoft.com/en-us/windows/turn-focus-assist-on-or-off-in-windows-10-5492a638-b5a3-1ee0-0c4f-5ae044450e09) on Windows, configure priority applications.
-- Get in the habit of leaving your phone at your desk when you take a break.
-- Configure [Digital Wellbeing](https://support.google.com/android/answer/9346420?hl=en) on Android or [Screen Time](https://www.theverge.com/2018/9/17/17870126/ios-12-screen-time-app-limits-downtime-features-how-to-use) on iPhones.
+- "began as an engagement between isolated units" that "escalated into a major battle which culminated in the outnumbered and defeated Union forces retreating to the high ground south of Gettysburg".
+- Overall a very good victory by the South, despite how disorganized both sides were at the start.
+- Following, Lee chose this ground to become _the_ battle where he would destroy the Northern forces.
 
 -----
 
-## Multi-tasking
+## Day 2
 
-![Multi-tasking](https://st3.depositphotos.com/1001201/12993/i/600/depositphotos_129938566-stock-photo-businessman-stressed-out-from-work.jpg)
+![Day_2](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Gettysburg_Battle_Map_Day2.png/706px-Gettysburg_Battle_Map_Day2.png)
 
 ---
 
-## Solution:
+## title
 
-- Humans are __single__ threaded processes, we just switch between tasks fast.
-- Block out sections of time in your calendar to single tasks.
-  - During these blocks, only do __that__ task, nothing else.
-- Make a list of ranked tasks and execute sequentially, __don't skip tasks!__
+- All of the rest of the infantry from both sides has arrived by morning of Day 2.
+- 
 
 -----
 
-## Hunger / Snacking
+## The Charge
 
-![Hunger](https://images.pexels.com/photos/5898312/pexels-photo-5898312.jpeg)
+![Charge](https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Pickett%27s-Charge.png/350px-Pickett%27s-Charge.png)
+
 
 ---
 
-## Solution:
+## 
 
-- Have a [consistent](https://www.nm.org/healthbeat/healthy-tips/nutrition/best-times-to-eat) eating schedule, eat meals at the same time each day.
-- [Avoid](https://www.healthline.com/nutrition/13-tips-to-stop-mindless-eating) keeping food at your desk, separate eating and work as much as possible.
-- Drink your daily amount of [water](https://www.cdc.gov/nutrition/data-statistics/plain-water-the-healthier-choice.html) _throughout_ the day.
-  - Added bonus: breaks up your day with bathroom breaks.
-
------
-
-## Stress
-
-![Stress](https://images.pexels.com/photos/3755761/pexels-photo-3755761.jpeg)
-
----
-
-## Solution:
-
-Personally, I utilize _Google Calendar_ and creating daily To-Do lists in _Google Keep_
-as a way to schedule out my tasks and reduce stress from time crunches.  Dealing with stress 
-is different for everyone, so for this distraction I opted to provide resources and processes.
-
-- This [article](https://www.entrepreneur.com/article/315243) has a few methods.
-- [CDC](https://www.cdc.gov/violenceprevention/about/copingwith-stresstips.html) guidance.
-- [UK NHS](https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/tips-to-reduce-stress/) guidance.
-- [Sutter Health](https://www.sutterhealth.org/health/mind-body/10-simple-ways-to-cope-with-stress) article.
-
------
+------
 
 # Thanks!
 
@@ -117,3 +93,11 @@ is different for everyone, so for this distraction I opted to provide resources 
 #### [Google Fonts](https://fonts.google.com/)
 
 #### [favicon.io](https://favicon.io/)
+
+-----
+
+## Works Cited
+
+- Lee - In Search of the Decisive Battle at Gettysburg - Michael J. Forsyth
+- [History.net](https://www.historynet.com/picketts-charge-gettysburg)
+- [Wikipedia](https://en.wikipedia.org/wiki/Battle_of_Gettysburg)
