@@ -22,3 +22,10 @@ img {
 li {
   font-size: 2vw;
 }
+
+code {
+  background-color: #3b3b3b;
+  border-radius: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
