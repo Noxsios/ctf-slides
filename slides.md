@@ -139,3 +139,4 @@ While Lee was a great tactician, he failed to employ the Principles of War to th
 - Lee - In Search of the Decisive Battle at Gettysburg - Michael J. Forsyth
 - [History.net](https://www.historynet.com/picketts-charge-gettysburg)
 - [Wikipedia](https://en.wikipedia.org/wiki/Battle_of_Gettysburg)
+- [The Killer Angels](https://en.wikipedia.org/wiki/The_Killer_Angels) - Highly recommended read, a lot of my Civil War knowledge comes from this series.
