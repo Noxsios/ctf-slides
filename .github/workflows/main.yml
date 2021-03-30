@@ -45,4 +45,7 @@ jobs:
           build_dir: /
           # Commit message
           commit_message: Deployed
-          # Write the given domain name to the CNAME file
+          # Repo token
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          # No jekyll
+          jekyll: false
