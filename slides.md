@@ -87,6 +87,12 @@ that he lost his focus on directing a campaign linked to political ends."
   - To finally face the center of the Union lines.
   - With zero way of knowing the strength of the enemy.
   - I would have questioned my commander's sanity if I received these orders.
+- cont.
+
+---
+
+## The Charge Cont.
+
 - 7,000+ Confederate troops made the charge, less than half returned.
 - Predicting this strategy, General Meade had forces on the right side of his center turn to engage, as well as artillery from the left side also engaged.
   - Essentially a modern day "kill box" was formed for the Confederates to charge into.
