@@ -67,7 +67,7 @@ that he lost his focus on directing a campaign linked to political ends."
 
 - All of the rest of the infantry from both sides has arrived by morning of Day 2.
 - Confederates nearly broke through the Union's left flank.
-  - Disorganization, miscommunication, and general upper level leadership failures.
+  - Disorganization, miscommunication, and general upper level leadership failures (sounds like a normal Tuesday in the military to me).
 - Heavy casualties on both sides.
 - Led to Lee believing that a similar strategy, but with more fresh troops committed, could prevail and crush the Union forces the following day.
 
@@ -82,7 +82,7 @@ that he lost his focus on directing a campaign linked to political ends."
 ## The Charge
 
 - Early afternoon artillery bombardment by Confederate cannons on Union central lines.
-  - Overshot and did little to soften.
+  - Overshot and did little to soften (imagine if they had modern satellite imagery).
 - 3/4 quarters of a mile distance to travel.
   - With fences and other obstacles in the way.
   - With Cemetery Hill to climb at the end.
