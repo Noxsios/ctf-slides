@@ -32,7 +32,7 @@ attempted an invasion of the North, one of General Robert E. Lee's few disastrou
 ## A Tactical Genius
 
 - Commander of the Confederate States Army during the American Civil War.
-- Lee displayed "expert use of the Napoleonic turning movement as described by Antoine de Jo-mini".
+- Lee displayed "expert use of the Napoleonic turning movement as described by Antoine de Jomini".
 - Goal was to bring the North to the peace negotiating table through costly defeats in Northern territory.
 - "Became so engrossed with the tactical details and the possibility of achieving an Austerlitz 
 that he lost his focus on directing a campaign linked to political ends."
@@ -140,3 +140,5 @@ While Lee was a great tactician, he failed to employ the Principles of War to th
 - [History.net](https://www.historynet.com/picketts-charge-gettysburg)
 - [Wikipedia](https://en.wikipedia.org/wiki/Battle_of_Gettysburg)
 - [The Killer Angels](https://en.wikipedia.org/wiki/The_Killer_Angels) - Highly recommended read, a lot of my Civil War knowledge comes from this series.
+
+[Repo URL](https://github.com/Noxsios/gettysburg)
