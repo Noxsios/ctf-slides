@@ -1,4 +1,4 @@
-### The Battle of Gettysburg - _Pickett's Charge_
+### The Battle of Gettysburg
 
 #### July 1–3, 1863
 
@@ -19,10 +19,7 @@ To view all slides press the `ESC` key, otherwise press `>` to move to the next 
 ## Preface
 
 The _Battle of Gettysburg_ is commonly known to be the turning point of the Civil War.  It marked the last time the South
-attempted an invasion of the North, and later led to the Gettysburg Address, one of the finest works of literature.
-
-The overall three day battle is far too dense and complex for this assignment, so I have chosen to focus on the third day,
-_Pickett's Charge_.
+attempted an invasion of the North, one of General Robert E. Lee's few disastrous defeats, and later led to the Gettysburg Address, one of the finest works of literature.
 
 -----
 
@@ -75,7 +72,7 @@ that he lost his focus on directing a campaign linked to political ends."
 
 ## Day 3 - July 3, 1863
 
-![Charge](http://www.thomaslegion.net/sitebuildercontent/sitebuilderpictures/pickettchargemap.gif)
+![Charge](https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Pickett%27s-Charge.png/800px-Pickett%27s-Charge.png)
 
 ---
 
