@@ -18,7 +18,7 @@ To view all slides press the `ESC` key, otherwise press right arrow (`>`) to mov
 
 ## Introduction
 
-- The CTF Problem - I chose to explain all of Category 8: Password Hashing
+- The CTF Problem - I chose to explain all of _Category 8: Password Hashing_
 - Steps to Solve
 - The Solution(s)
 - Workplace Relevance
@@ -191,12 +191,13 @@ patrickmahomes:$6$va4SdFMc$KXcMFteB4iws9Fdp5r4.l8QZsYI/WXtcZ5/Bkq9OqfA22GbLAeTh5
 
 ## Approach
 
-- My explation for Problem 10 comes before 9, as solving 10 made solving 9 easier.
+- My explanation for Problem 10 comes before 9, as solving 10 made solving 9 easier.
 - Problem 9+10 hashes are clearly SHA 512 hashes, as they begin w/ `$6$`.  
 - First I pulled the hashes out, and placed each into a separate file `sha512.txt`.
-- To brute-force these I used [Hashcat](https://hashcat.net/hashcat/).
+- To brute-force these I used [hashcat](https://hashcat.net/hashcat/).
   
 ---
+
 
 ## Command
 
@@ -204,11 +205,11 @@ patrickmahomes:$6$va4SdFMc$KXcMFteB4iws9Fdp5r4.l8QZsYI/WXtcZ5/Bkq9OqfA22GbLAeTh5
 hashcat -m 1800 -a 3 -O sha512.txt ?a?a?a?a?a?a?a?a -i
 ```
 
-- `-m 1800` tells Hashcat to use the [SHA-512 hash type](https://hashcat.net/wiki/doku.php?id=example_hashes).
-- `-a 3` tells Hashcat to use the mask attack mode.
-- `-O` tells Hashcat to use the optimized kernel.
+- `-m 1800` tells hashcat to use the [SHA-512 hash type](https://hashcat.net/wiki/doku.php?id=example_hashes).
+- `-a 3` tells hashcat to use the mask attack mode.
+- `-O` tells hashcat to use the optimized kernel.
 - `?a?a?a?a?a?a?a?a` is my provided input mask- [explanation](https://hashcat.net/wiki/doku.php?id=mask_attack).
-- `-i` tells Hashcat to use incremental mode.
+- `-i` tells hashcat to use incremental mode.
 
 ---
 
@@ -375,13 +376,18 @@ Stopped: Sat Jul 17 15:32:35 2021
 
 ## The Relationship to the Workplace
 
-> insert relationship
+Weak passwords and weak hashing are the fastest way to becoming compromised. 
+
+With ["61 percent of breaches attributed to leveraged credentials"](https://www.securelink.com/blog/81-hacking-related-breaches-leverage-compromised-credentials/), it is imperitive your organization leverages strong hashing.  However, strong hashing does not necessarily mean strong passwords.  Cracking Problem 9 and 10 demonstrates this. Even though SHA-512 was used, the passwords were weak and only took me a few minutes to crack (although I am running an RTX 3070 + i9).  
+
+Minimum password length and complexity requirements are the number one way that security can be assured in your organization.  Additionally, employees that have left the organization must have their credentials revoked as part of their out processing.  
 
 -----
 
 ## Summary
 
-> insert summary
+- Used John the Ripper on Problems 1-8.
+- Used hashcat on Problems 9 and 10.
 
 -----
 
