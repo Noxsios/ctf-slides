@@ -1,4 +1,4 @@
-# Battle of Gettysburg presentation
+# CEH CTF presentation
 
 ## Setup
 

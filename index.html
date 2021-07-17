@@ -1,55 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
 
-    <title>Battle of Gettysburg</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
-    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
-    <link rel="stylesheet" href="reveal.js/dist/theme/night.css" id="theme" />
+  <title>CTF Slides</title>
 
-    <link
-      rel="stylesheet"
-      href="reveal.js/plugin/highlight/zenburn.css"
-      id="highlight-theme"
-    />
-    <link rel="stylesheet" href="./custom.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
-  </head>
+  <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="reveal.js/dist/theme/night.css" id="theme" />
 
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <section
-          data-markdown="slides.md"
-          data-separator="^\r?\n-----\r?\n$"
-          data-separator-vertical="^\r?\n---\r?\n$"
-          data-notes="^Notes:"
-          data-charset="utf-8"
-        ></section>
-      </div>
+  <link rel="stylesheet" href="reveal.js/plugin/highlight/shades-of-purple.css" id="highlight-theme" />
+  <link rel="stylesheet" href="./custom.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown="slides.md" data-separator="^\r?\n-----\r?\n$" data-separator-vertical="^\r?\n---\r?\n$"
+        data-notes="^Notes:" data-charset="utf-8"></section>
     </div>
+  </div>
 
-    <script src="reveal.js/dist/reveal.js"></script>
-    <script src="reveal.js/plugin/notes/notes.js"></script>
-    <script src="reveal.js/plugin/markdown/markdown.js"></script>
-    <script src="reveal.js/plugin/highlight/highlight.js"></script>
-    <script src="reveal.js/plugin/zoom/zoom.js"></script>
-    <script>
-      Reveal.initialize({
-        hash: true,
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
-      });
-    </script>
-  </body>
+  <script src="reveal.js/dist/reveal.js"></script>
+  <script src="reveal.js/plugin/notes/notes.js"></script>
+  <script src="reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="reveal.js/plugin/zoom/zoom.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+    });
+  </script>
+</body>
+
 </html>

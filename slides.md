@@ -1,8 +1,8 @@
-### The Battle of Gettysburg
-
-#### July 1–3, 1863
+### Capture The Flag
 
 #### `Harry Randazzo`
+
+#### Team 4
 
 -----
 
@@ -12,115 +12,376 @@ Navigate using your arrow keys. If you see a &#8681; in the bottom right nav the
 
 ## Nice!
 
-To view all slides press the `ESC` key, otherwise press `>` to move to the next slide.
+To view all slides press the `ESC` key, otherwise press right arrow (`>`) to move to the next slide.
 
 -----
 
-## Preface
+## Introduction
 
-The _Battle of Gettysburg_ is commonly known to be the turning point of the Civil War.  It marked the last time the South
-attempted an invasion of the North, one of General Robert E. Lee's few disastrous defeats, and later led to the Gettysburg Address, one of the finest works of literature.
-
------
-
-## General Robert E. Lee
-
-![Lee](https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Robert_Edward_Lee.jpg/1200px-Robert_Edward_Lee.jpg)
-
----
-
-## A Tactical Genius
-
-- Commander of the Confederate States Army during the American Civil War.
-- Lee displayed "expert use of the Napoleonic turning movement as described by Antoine de Jomini".
-- Goal was to bring the North to the peace negotiating table through costly defeats in Northern territory.
-- "Became so engrossed with the tactical details and the possibility of achieving an Austerlitz 
-that he lost his focus on directing a campaign linked to political ends."
-- Sought to achieve a strategic and operational objective through a single tactical victory.
+- The CTF Problem - I chose to explain all of Category 8: Password Hashing
+- Steps to Solve
+- The Solution(s)
+- Workplace Relevance
 
 -----
 
-## Day 1 - July 1, 1863
+## CTF Category Description
 
-![Day_1](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Gettysburg_Battle_Map_Day1.png/706px-Gettysburg_Battle_Map_Day1.png)
+> Goal: Given the hash, find the password.
 
----
-
-## The Prelude
-
-- "began as an engagement between isolated units" that "escalated into a major battle which culminated in the outnumbered and defeated Union forces retreating to the high ground south of Gettysburg".
-- Overall a very good victory by the South, despite how disorganized both sides were at the start.
-- Following, Lee chose this ground to become _the_ battle where he would destroy the Northern forces.
+This category is all about cracking password hashes (cryptologically generated representations of data identity).  This site has a really great explanation on what hashing is - [LINK](https://www.thesslstore.com/blog/difference-encryption-hashing-salting/).
 
 -----
 
-## Day 2 - July 2, 1863
+## Initial Approach
 
-![Day_2](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Gettysburg_Battle_Map_Day2.png/706px-Gettysburg_Battle_Map_Day2.png)
-
----
-
-## Close Calls
-
-- All of the rest of the infantry from both sides has arrived by morning of Day 2.
-- Confederates nearly broke through the Union's left flank.
-  - Disorganization, miscommunication, and general upper level leadership failures (sounds like a normal Tuesday in the military to me).
-- Heavy casualties on both sides.
-- Led to Lee believing that a similar strategy, but with more fresh troops committed, could prevail and crush the Union forces the following day.
+1. Boot up a [Kali](https://www.kali.org/) Linux VM.
+2. Identify commonalities between hashes, i.e. the same algorithm, salt, iterations, etc.
+3. Break each group into its own text file.
+4. Test each group for hash type w/ [hash-identifier](https://tools.kali.org/password-attacks/hash-identifier).
+5. Perform necessary steps to crack each type.
 
 -----
 
-## Day 3 - July 3, 1863
+## Problems 1-4
 
-![Charge](https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Pickett%27s-Charge.png/800px-Pickett%27s-Charge.png)
+Hashes:
 
----
+```text
+bart:"":"":A988BBFD3CFDE311AAD3B435B51404EE:9CE736F7B01B851A7BBB9DA1B67E6C98
 
-## The Charge
+snowball:"":"":D8C770C7E94592D9AAD3B435B51404EE:EEC1E8A883208C9A53FD91821F0EAB68
 
-- Early afternoon artillery bombardment by Confederate cannons on Union central lines.
-  - Overshot and did little to soften (imagine if they had modern satellite imagery).
-- 3/4 quarters of a mile distance to travel.
-  - With fences and other obstacles in the way.
-  - With Cemetery Hill to climb at the end.
-  - Under both infantry and artillery fire. (Hopefully the bombardment would have taken care of the artillery)
-  - To finally face the center of the Union lines.
-  - With zero way of knowing the strength of the enemy.
-  - I would have questioned my commander's sanity if I received these orders.
-- cont.
+santaslittlehelper:"":"":C41A0804FF1D42C3AAD3B435B51404EE:5A32DC0BCECC74248C38C4B22A6EDE94
+
+moe:"":"":6CD585939C65CA69AAD3B435B51404EE:AA833964D79A9FEEA8F95E55A9A67F84
+```
 
 ---
 
-## The Charge Cont.
+## Approach
 
-- 7,000+ Confederate troops made the charge, less than half returned.
-- Predicting this strategy, Union General Meade had forces on the right side of his center turn to engage, as well as artillery from the left side also engaged.
-  - Essentially a modern day "kill box" was formed for the Confederates to charge into.
-
----
-
-## Principles
-
-This battle was lost due to misuse and misunderstanding the Principles of War.
-
-- There was zero `Surprise` in Lee's orders
-  - Day 1 attempted to seize viable high ground and organize
-  - Day 2 attacked both flanks, nearly succeeding
-  - Day 3 attack the center
-- Lee chose to fight Gettysburg knowing that the North had the superior ground, 
-he failed to `Manuever` his forces into a advantageous position.
-- The Confederate forces, following the death of General "Stonewall" Jackson, had many newly promoted officers
-  - They lacked solid `Unity of Command`
-- cont.
+- Looking at these four hashes, I idenfied that the first hash given in for each user ended in `AAD3B435B51404EE`. 
+- Searching online about this led me to [this](https://yougottahackthat.com/blog/339/what-is-aad3b435b51404eeaad3b435b51404ee) site.  
+- This site explained that I was looking at a NT/LM hash.
+  - "Typically if you see lots of  “404ee” at the end of the LM part you are up against a Windows 2008 (or later) domain which never required backwards compatibility."
 
 ---
 
-## Principles Cont.
+## Command
 
-- At the end of Day 1, Confederate forces under General Hill failed to capture Cemetery Hill, showing a failure of `Security`
-- During Pickett's Charge the Confederate forces were unable to join together and form a single `Mass` to break through the Union's lines.
+```bash
+john --format=lm lm.txt
+```
+- Launch John the Ripper w/ hash format `lm`
 
-While Lee was a great tactician, he failed to employ the Principles of War to their fullest at the most crucial point in the Civil War.  
+---
+
+## Output
+
+```bash
+Using default input encoding: UTF-8
+Using default target encoding: CP850
+Loaded 4 password hashes with no different salts (LM [DES 512/512 AVX512F])
+Warning: poor OpenMP scalability for this hash type, consider --fork=16
+Will run 16 OpenMP threads
+Proceeding with single, rules:Single
+Press 'q' or Ctrl-C to abort, almost any other key for status
+Almost done: Processing the remaining buffered candidate passwords, if any.
+Proceeding with wordlist:/usr/share/john/password.lst, rules:Wordlist
+BARTMAN          (?)
+Proceeding with incremental:LM_ASCII
+MYCAT            (?)
+BARKEEP          (?)
+GOODDOG          (?)
+4g 0:00:00:05 DONE 3/3 (2021-07-17 18:23) 0.7889g/s 57484Kp/s 57484Kc/s 64118KC/s GODAR14..GOLYL24
+Use the "--show --format=LM" options to display all of the cracked passwords reliably
+Session completed
+
+$ john --format=lm lm.txt --show
+
+bart:BARTMAN
+snowball:MYCAT
+santaslittlehelper:GOODDOG
+moe:BARKEEP
+
+4 password hashes cracked, 0 left
+```
+
+> Answer: `[BARTMAN, MYCAT, GOODDOG, BARKEEP]`
+
+-----
+
+## Problems 5-8
+
+Hashes:
+
+```text
+oscar:1135:NOPASSWORD*********************:488CDCDD2225312793ED6967B28C1025:::
+
+cookiemonster:1136:NOPASSWORD*********************:7BA85FD1EDF397D8E180F6E16529EC38:::
+
+raylewis:1137:NOPASSWORD*********************:067ABEC2947816E38AC345B1DD46E534:::
+
+lamarjackson:1138:NOPASSWORD*********************:A675081AAF0B43D60A819653635AC405:::
+```
+
+---
+
+## Approach
+
+- As identified by [hash-identifier](https://tools.kali.org/password-attacks/hash-identifier), these are MD4 hashes.
+- So all I had to do was throw these in a file - `md4_hashes.txt` and run John the Ripper on it.
+
+---
+
+## Command
+
+```bash
+$ john md4_hashes.txt
+```
+- Simple, no-frills launch of John the Ripper.
+- This leaves all options as default.
+
+---
+
+## Output
+
+```bash
+Using default input encoding: UTF-8
+Loaded 4 password hashes with no different salts (NT [MD4 512/512 AVX512BW 16x3])
+Warning: no OpenMP support for this hash type, consider --fork=16
+Proceeding with single, rules:Single
+Press 'q' or Ctrl-C to abort, almost any other key for status
+Almost done: Processing the remaining buffered candidate passwords, if any.
+Warning: Only 17 candidates buffered for the current salt, minimum 48 needed for performance.
+Proceeding with wordlist:/usr/share/john/password.lst, rules:Wordlist
+green            (oscar)
+cookies          (cookiemonster)
+eight            (lamarjackson)
+Proceeding with incremental:ASCII
+52               (raylewis)
+4g 0:00:00:01 DONE 3/3 (2021-07-17 18:16) 3.738g/s 13746Kp/s 13746Kc/s 13759KC/s negu..avh
+Use the "--show --format=NT" options to display all of the cracked passwords reliably
+Session completed
+
+$ john --show nt.txt
+
+oscar:green:1135:NOPASSWORD*********************:488CDCDD2225312793ED6967B28C1025:::
+cookiemonster:cookies:1136:NOPASSWORD*********************:7BA85FD1EDF397D8E180F6E16529EC38:::
+raylewis:52:1137:NOPASSWORD*********************:067ABEC2947816E38AC345B1DD46E534:::
+lamarjackson:eight:1138:NOPASSWORD*********************:A675081AAF0B43D60A819653635AC405:::
+
+4 password hashes cracked, 0 left
+```
+
+> Answer: `[green, cookies, 52, eight]`
+
+-----
+
+## Problem 10
+
+Hash:
+
+```text
+patrickmahomes:$6$va4SdFMc$KXcMFteB4iws9Fdp5r4.l8QZsYI/WXtcZ5/Bkq9OqfA22GbLAeTh5fdh67KCV0NKbgR0Olc6Fizivj2j1Vxty1:18554:0:99999:7:::
+```
+
+---
+
+## Approach
+
+- My explation for Problem 10 comes before 9, as solving 10 made solving 9 easier.
+- Problem 9+10 hashes are clearly SHA 512 hashes, as they begin w/ `$6$`.  
+- First I pulled the hashes out, and placed each into a separate file `sha512.txt`.
+- To brute-force these I used [Hashcat](https://hashcat.net/hashcat/).
+  
+---
+
+## Command
+
+```bash
+hashcat -m 1800 -a 3 -O sha512.txt ?a?a?a?a?a?a?a?a -i
+```
+
+- `-m 1800` tells Hashcat to use the [SHA-512 hash type](https://hashcat.net/wiki/doku.php?id=example_hashes).
+- `-a 3` tells Hashcat to use the mask attack mode.
+- `-O` tells Hashcat to use the optimized kernel.
+- `?a?a?a?a?a?a?a?a` is my provided input mask- [explanation](https://hashcat.net/wiki/doku.php?id=mask_attack).
+- `-i` tells Hashcat to use incremental mode.
+
+---
+
+### Output
+
+```bash
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Name........: sha512crypt $6$, SHA512 (Unix)
+Hash.Target......: sha512.txt
+Time.Started.....: Sat Jul 17 15:10:45 2021 (7 secs)
+Time.Estimated...: Sat Jul 17 15:10:52 2021 (0 secs)
+Kernel.Feature...: Optimized Kernel
+Guess.Mask.......: ?a [1]
+Guess.Queue......: 1/8 (12.50%)
+Speed.#1.........:       28 H/s (0.16ms) @ Accel:4 Loops:32 Thr:1024 Vec:1
+Recovered........: 0/2 (0.00%) Digests, 0/2 (0.00%) Salts
+Progress.........: 190/190 (100.00%)
+Rejected.........: 0/190 (0.00%)
+Restore.Point....: 1/1 (100.00%)
+Restore.Sub.#1...: Salt:1 Amplifier:94-95 Iteration:4992-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....:   ->
+Hardware.Mon.#1..: Temp: 46c Fan:  0% Util: 78% Core:1964MHz Mem:6794MHz Bus:16
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Name........: sha512crypt $6$, SHA512 (Unix)
+Hash.Target......: sha512.txt
+Time.Started.....: Sat Jul 17 15:10:52 2021 (8 secs)
+Time.Estimated...: Sat Jul 17 15:11:00 2021 (0 secs)
+Kernel.Feature...: Optimized Kernel
+Guess.Mask.......: ?a?a [2]
+Guess.Queue......: 2/8 (25.00%)
+Speed.#1.........:     2507 H/s (0.16ms) @ Accel:4 Loops:32 Thr:1024 Vec:1
+Recovered........: 0/2 (0.00%) Digests, 0/2 (0.00%) Salts
+Progress.........: 18050/18050 (100.00%)
+Rejected.........: 0/18050 (0.00%)
+Restore.Point....: 95/95 (100.00%)
+Restore.Sub.#1...: Salt:1 Amplifier:94-95 Iteration:4992-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....:  a ->
+Hardware.Mon.#1..: Temp: 46c Fan:  0% Util: 79% Core:1964MHz Mem:6794MHz Bus:16
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+$6$va4SdFMc$KXcMFteB4iws9Fdp5r4.l8QZsYI/WXtcZ5/Bkq9OqfA22GbLAeTh5fdh67KCV0NKbgR0Olc6Fizivj2j1Vxty1:A&M
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Name........: sha512crypt $6$, SHA512 (Unix)
+Hash.Target......: sha512.txt
+Time.Started.....: Sat Jul 17 15:11:00 2021 (24 secs)
+Time.Estimated...: Sat Jul 17 15:11:24 2021 (0 secs)
+Kernel.Feature...: Optimized Kernel
+Guess.Mask.......: ?a?a?a [3]
+Guess.Queue......: 3/8 (37.50%)
+Speed.#1.........:    48636 H/s (1.08ms) @ Accel:4 Loops:32 Thr:1024 Vec:1
+Recovered........: 1/2 (50.00%) Digests, 1/2 (50.00%) Salts
+Progress.........: 1714750/1714750 (100.00%)
+Rejected.........: 0/1714750 (0.00%)
+Restore.Point....: 9025/9025 (100.00%)
+Restore.Sub.#1...: Salt:1 Amplifier:94-95 Iteration:4992-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....:  ar ->   ~
+Hardware.Mon.#1..: Temp: 52c Fan: 52% Util: 94% Core:1949MHz Mem:6794MHz Bus:16
+```
+
+> Answer: `A&M`
+
+-----
+
+## Problem 9
+
+Hash:
+
+```text
+elmo:$6$CBSmiIlz$/4FJVUnR1RPLRkXrrOIXpZXiOIXWmsyQGfqBro8Tw9qGnbOZE.X7XqSwjxD1I8e67TazQ155mncXopwk24rYu1:18554:0:99999:7:::
+```
+
+---
+
+### Command
+
+```bash
+$ hashcat -m 1800 -a 3 -O -i --increment-min 5 --increment-max 10 sha512.txt ?a?a?a?a?a?a?a?a?a?a
+```
+
+- I took a calculated guess that the password would be between five and ten characters long. 
+- In my previous command I had already exhausted all hashes between 1-3 characters long, and I took a gamble it would not be four characters.
+ 
+---
+
+### Output
+
+```bash
+Session..........: hashcat
+Status...........: Running
+Hash.Name........: sha512crypt $6$, SHA512 (Unix)
+Hash.Target......: $6$CBSmiIlz$/4FJVUnR1RPLRkXrrOIXpZXiOIXWmsyQGfqBro8...24rYu1
+Time.Started.....: Sat Jul 17 15:25:19 2021 (4 mins, 24 secs)
+Time.Estimated...: Sun Jul 18 03:53:10 2021 (12 hours, 23 mins)
+Kernel.Feature...: Optimized Kernel
+Guess.Mask.......: ?a?a?a?a?a [5]
+Guess.Queue......: 1/4 (25.00%)
+Speed.#1.........:   172.4 kH/s (6.78ms) @ Accel:4 Loops:32 Thr:1024 Vec:1
+Recovered........: 0/1 (0.00%) Digests
+Progress.........: 45408256/7737809375 (0.59%)
+Rejected.........: 0/45408256 (0.00%)
+Restore.Point....: 376832/81450625 (0.46%)
+Restore.Sub.#1...: Salt:0 Amplifier:51-52 Iteration:3552-3584
+Candidate.Engine.: Device Generator
+Candidates.#1....: FVq@1 -> F|Iyb
+Hardware.Mon.#1..: Temp: 55c Fan: 89% Util: 98% Core:1970MHz Mem:6794MHz Bus:16
+
+$6$CBSmiIlz$/4FJVUnR1RPLRkXrrOIXpZXiOIXWmsyQGfqBro8Tw9qGnbOZE.X7XqSwjxD1I8e67TazQ155mncXopwk24rYu1:fuzzy
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Name........: sha512crypt $6$, SHA512 (Unix)
+Hash.Target......: $6$CBSmiIlz$/4FJVUnR1RPLRkXrrOIXpZXiOIXWmsyQGfqBro8...24rYu1
+Time.Started.....: Sat Jul 17 15:25:19 2021 (7 mins, 14 secs)
+Time.Estimated...: Sat Jul 17 15:32:33 2021 (0 secs)
+Kernel.Feature...: Optimized Kernel
+Guess.Mask.......: ?a?a?a?a?a [5]
+Guess.Queue......: 1/4 (25.00%)
+Speed.#1.........:   172.7 kH/s (6.79ms) @ Accel:4 Loops:32 Thr:1024 Vec:1
+Recovered........: 1/1 (100.00%) Digests
+Progress.........: 74989568/7737809375 (0.97%)
+Rejected.........: 0/74989568 (0.00%)
+Restore.Point....: 753664/81450625 (0.93%)
+Restore.Sub.#1...: Salt:0 Amplifier:17-18 Iteration:4992-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: fk\pe -> f*vli
+Hardware.Mon.#1..: Temp: 56c Fan: 89% Util: 98% Core:1970MHz Mem:6794MHz Bus:16
+
+Started: Sat Jul 17 15:25:18 2021
+Stopped: Sat Jul 17 15:32:35 2021
+```
+
+> Answer: `fuzzy`
+
+-----
+
+## Lessons Learned
+
+- A good deal of cracking hashes is done by identifying the type, and making a few educated guesses.
+- Prepare to be extremely frustrated if you are not prepared to be extremely frustrated.
+- Good documentation is a blessing.
+
+-----
+
+## The Relationship to the Workplace
+
+> insert relationship
+
+-----
+
+## Summary
+
+> insert summary
 
 -----
 
@@ -137,14 +398,3 @@ While Lee was a great tactician, he failed to employ the Principles of War to th
 #### [Google Fonts](https://fonts.google.com/)
 
 #### [favicon.io](https://favicon.io/)
-
------
-
-## Works Cited
-
-- Lee - In Search of the Decisive Battle at Gettysburg - Michael J. Forsyth
-- [History.net](https://www.historynet.com/picketts-charge-gettysburg)
-- [Wikipedia](https://en.wikipedia.org/wiki/Battle_of_Gettysburg)
-- [The Killer Angels](https://en.wikipedia.org/wiki/The_Killer_Angels) - Highly recommended read, a lot of my Civil War knowledge comes from this series.
-
-[Repo URL](https://github.com/Noxsios/gettysburg)
