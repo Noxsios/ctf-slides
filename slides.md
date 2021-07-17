@@ -195,9 +195,8 @@ patrickmahomes:$6$va4SdFMc$KXcMFteB4iws9Fdp5r4.l8QZsYI/WXtcZ5/Bkq9OqfA22GbLAeTh5
 - Problem 9+10 hashes are clearly SHA 512 hashes, as they begin w/ `$6$`.  
 - First I pulled the hashes out, and placed each into a separate file `sha512.txt`.
 - To brute-force these I used [hashcat](https://hashcat.net/hashcat/).
-  
----
 
+---
 
 ## Command
 
