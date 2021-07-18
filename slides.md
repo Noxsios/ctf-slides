@@ -14,6 +14,8 @@ Navigate using your arrow keys. If you see a &#8681; in the bottom right nav the
 
 To view all slides press the `ESC` key, otherwise press right arrow (`>`) to move to the next slide.
 
+> If the slide content is too cramped, try zooming out w/ `CTRL + -`
+
 -----
 
 ## Introduction
@@ -375,11 +377,11 @@ Stopped: Sat Jul 17 15:32:35 2021
 
 ## The Relationship to the Workplace
 
-Weak passwords and weak hashing are the fastest way to becoming compromised. 
+- <small>Weak passwords and weak hashing are the fastest way to becoming compromised.</small>
 
-With ["61 percent of breaches attributed to leveraged credentials"](https://www.securelink.com/blog/81-hacking-related-breaches-leverage-compromised-credentials/), it is imperitive your organization leverages strong hashing.  However, strong hashing does not necessarily mean strong passwords.  Cracking Problem 9 and 10 demonstrates this. Even though SHA-512 was used, the passwords were weak and only took me a few minutes to crack (although I am running an RTX 3070 + i9).  
-
-Minimum password length and complexity requirements are the number one way that security can be assured in your organization.  Additionally, employees that have left the organization must have their credentials revoked as part of their out processing.  
+- <small>With ["61 percent of breaches attributed to leveraged credentials"](https://www.securelink.com/blog/81-hacking-related-breaches-leverage-compromised-credentials/), it is imperitive your organization leverages strong hashing.  However, strong hashing does not necessarily mean strong passwords.</small> 
+  - <small>Cracking Problem 9 and 10 demonstrates this. Even though SHA-512 was used, the passwords were weak and only took me a few minutes to crack (although I am running an RTX 3070 + i9).</small>
+- <small>Minimum password length and complexity requirements are the number one way that security can be assured in your organization.  Additionally, employees that have left the organization must have their credentials revoked as part of their out processing.</small>
 
 -----
 
