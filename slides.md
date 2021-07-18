@@ -14,7 +14,7 @@ Navigate using your arrow keys. If you see a &#8681; in the bottom right nav the
 
 To view all slides press the `ESC` key, otherwise press right arrow (`>`) to move to the next slide.
 
-> If the slide content is too cramped, try zooming out w/ `CTRL + -`
+> If the slide content is too cramped, try zooming out w/ `CTRL` + `-`
 
 -----
 
@@ -207,11 +207,11 @@ patrickmahomes:$6$va4SdFMc$KXcMFteB4iws9Fdp5r4.l8QZsYI/WXtcZ5/Bkq9OqfA22GbLAeTh5
 hashcat -m 1800 -a 3 -O sha512.txt ?a?a?a?a?a?a?a?a -i
 ```
 
-- `-m 1800` tells hashcat to use the [SHA-512 hash type](https://hashcat.net/wiki/doku.php?id=example_hashes).
-- `-a 3` tells hashcat to use the mask attack mode.
-- `-O` tells hashcat to use the optimized kernel.
-- `?a?a?a?a?a?a?a?a` is my provided input mask- [explanation](https://hashcat.net/wiki/doku.php?id=mask_attack).
-- `-i` tells hashcat to use incremental mode.
+- `-m 1800` : use[SHA-512 hash type](https://hashcat.net/wiki/doku.php?id=example_hashes).
+- `-a 3` : use the mask attack mode.
+- `-O` : use the optimized kernel.
+- `?a?a?a?a?a?a?a?a` : provided input mask- [explanation](https://hashcat.net/wiki/doku.php?id=mask_attack).
+- `-i` : use incremental mode.
 
 ---
 
