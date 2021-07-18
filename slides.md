@@ -63,7 +63,7 @@ moe:"":"":6CD585939C65CA69AAD3B435B51404EE:AA833964D79A9FEEA8F95E55A9A67F84
 
 ## Approach
 
-- Looking at these four hashes, I idenfied that the first hash given in for each user ended in `AAD3B435B51404EE`. 
+- Looking at these four hashes, I identified that the first hash given in for each user ended in `AAD3B435B51404EE`. 
 - Searching online about this led me to [this](https://yougottahackthat.com/blog/339/what-is-aad3b435b51404eeaad3b435b51404ee) site.  
 - This site explained that I was looking at a NT/LM hash.
   - "Typically if you see lots of  “404ee” at the end of the LM part you are up against a Windows 2008 (or later) domain which never required backwards compatibility."
@@ -75,6 +75,7 @@ moe:"":"":6CD585939C65CA69AAD3B435B51404EE:AA833964D79A9FEEA8F95E55A9A67F84
 ```bash
 john --format=lm lm.txt
 ```
+- Throw these four hashes into a text file
 - Launch John the Ripper w/ hash format `lm`
 
 ---
@@ -194,7 +195,7 @@ patrickmahomes:$6$va4SdFMc$KXcMFteB4iws9Fdp5r4.l8QZsYI/WXtcZ5/Bkq9OqfA22GbLAeTh5
 ## Approach
 
 - My explanation for Problem 10 comes before 9, as solving 10 made solving 9 easier.
-- Problem 9+10 hashes are clearly SHA 512 hashes, as they begin w/ `$6$`.  
+- Problem 9+10 hashes are clearly SHA-512 hashes, as they begin w/ `$6$`.  
 - First I pulled the hashes out, and placed each into a separate file `sha512.txt`.
 - To brute-force these I used [hashcat](https://hashcat.net/hashcat/).
 
