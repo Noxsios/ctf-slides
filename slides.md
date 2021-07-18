@@ -314,7 +314,7 @@ $ hashcat -m 1800 -a 3 -O -i --increment-min 5 --increment-max 10 sha512.txt ?a?
 
 - I took a calculated guess that the password would be between five and ten characters long. 
 - In my previous command I had already exhausted all hashes between 1-3 characters long, and I took a gamble it would not be four characters.
- 
+
 ---
 
 ### Output
