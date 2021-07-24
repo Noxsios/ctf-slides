@@ -207,10 +207,10 @@ patrickmahomes:$6$va4SdFMc$KXcMFteB4iws9Fdp5r4.l8QZsYI/WXtcZ5/Bkq9OqfA22GbLAeTh5
 hashcat -m 1800 -a 3 -O sha512.txt ?a?a?a?a?a?a?a?a -i
 ```
 
-- `-m 1800` : use[SHA-512 hash type](https://hashcat.net/wiki/doku.php?id=example_hashes).
+- `-m 1800` : use [SHA-512 hash type](https://hashcat.net/wiki/doku.php?id=example_hashes).
 - `-a 3` : use the mask attack mode.
 - `-O` : use the optimized kernel.
-- `?a?a?a?a?a?a?a?a` : provided input mask- [explanation](https://hashcat.net/wiki/doku.php?id=mask_attack).
+- `?a?a?a?a?a?a?a?a` : provided [input mask](https://hashcat.net/wiki/doku.php?id=mask_attack).
 - `-i` : use incremental mode.
 
 ---
@@ -381,6 +381,7 @@ __Problem__: Find the hash for `c3p0` in the capture file, and then crack the pa
 - First, I opened the pcap file in Wireshark.
 - Then I went to `> Statistics > Conversations > TCP`.
   - I did this because odds are the hash will be contained in a TCP conversation.
+  - As well I sorted by number of bytes, with the top talkers at the top.
 
 ![tcp_converstations](images/tcp_conversations.png)
 
