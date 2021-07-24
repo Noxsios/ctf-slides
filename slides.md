@@ -38,7 +38,7 @@ This category is all about cracking password hashes (cryptologically generated r
 ## Initial Approach
 
 1. Boot up a [Kali](https://www.kali.org/) Linux VM.
-2. Identify commonalities between hashes, i.e. the same algorithm, salt, iterations, etc.
+2. Identify commonalities between hashes; i.e. the same algorithm, salt, iterations, etc.
 3. Break each group into its own text file.
 4. Test each group for hash type w/ [hash-identifier](https://tools.kali.org/password-attacks/hash-identifier).
 5. Perform necessary steps to crack each type.
@@ -63,10 +63,10 @@ moe:"":"":6CD585939C65CA69AAD3B435B51404EE:AA833964D79A9FEEA8F95E55A9A67F84
 
 ## Approach
 
-- Looking at these four hashes, I identified that the first hash given in for each user ended in `AAD3B435B51404EE`. 
-- Searching online about this led me to [this](https://yougottahackthat.com/blog/339/what-is-aad3b435b51404eeaad3b435b51404ee) site.  
+- Looking at these four hashes, I identified that the first hash given in for each user ended in `AAD3B435B51404EE`.
+- Searching online about this led me to [this](https://yougottahackthat.com/blog/339/what-is-aad3b435b51404eeaad3b435b51404ee) site.
 - This site explained that I was looking at a NT/LM hash.
-  - "Typically if you see lots of  “404ee” at the end of the LM part you are up against a Windows 2008 (or later) domain which never required backwards compatibility."
+  - _"Typically if you see lots of  “404ee” at the end of the LM part you are up against a Windows 2008 (or later) domain which never required backwards compatibility."_
 
 ---
 
@@ -75,8 +75,8 @@ moe:"":"":6CD585939C65CA69AAD3B435B51404EE:AA833964D79A9FEEA8F95E55A9A67F84
 ```bash
 john --format=lm lm.txt
 ```
-- Throw these four hashes into a text file
-- Launch John the Ripper w/ hash format `lm`
+- Throw these four hashes into a text file.
+- Launch John the Ripper w/ hash format `lm`.
 
 ---
 
@@ -195,7 +195,7 @@ patrickmahomes:$6$va4SdFMc$KXcMFteB4iws9Fdp5r4.l8QZsYI/WXtcZ5/Bkq9OqfA22GbLAeTh5
 ## Approach
 
 - My explanation for Problem 10 comes before 9, as solving 10 made solving 9 easier.
-- Problem 9+10 hashes are clearly SHA-512 hashes, as they begin w/ `$6$`.  
+- Problem 9+10 hashes are clearly SHA-512 hashes, as they begin w/ `$6$`.
 - First I pulled the hashes out, and placed each into a separate file `sha512.txt`.
 - To brute-force these I used [hashcat](https://hashcat.net/hashcat/).
 
@@ -312,7 +312,7 @@ elmo:$6$CBSmiIlz$/4FJVUnR1RPLRkXrrOIXpZXiOIXWmsyQGfqBro8Tw9qGnbOZE.X7XqSwjxD1I8e
 $ hashcat -m 1800 -a 3 -O -i --increment-min 5 --increment-max 10 sha512.txt ?a?a?a?a?a?a?a?a?a?a
 ```
 
-- I took a calculated guess that the password would be between five and ten characters long. 
+- I took a calculated guess that the password would be between five and ten characters long.
 - In my previous command I had already exhausted all hashes between 1-3 characters long, and I took a gamble it would not be four characters.
 
 ---
@@ -378,8 +378,9 @@ __Problem__: Find the hash for `c3p0` in the capture file, and then crack the pa
 
 ### First Look
 
-- The first thing I do is go to `> Statistics > Conversations > TCP`
-  - I do this because odds are the hash will be contained in a TCP conversation.
+- First, I opened the pcap file in Wireshark.
+- Then I went to `> Statistics > Conversations > TCP`.
+  - I did this because odds are the hash will be contained in a TCP conversation.
 
 ![tcp_converstations](images/tcp_conversations.png)
 
@@ -387,8 +388,8 @@ __Problem__: Find the hash for `c3p0` in the capture file, and then crack the pa
 
 ### Finding the Hash
 
-- The top two are useless to me, but finally I find the hash inside the __third__ conversation.
-  - For this I select each conversation, click `Follow Stream...` and skim through.
+- The top two are useless to me, but I finally found the hash inside the __third__ conversation.
+  - For this I selected each conversation, clicked `Follow Stream...` and skimmed through looking for hash like data.
 
 ![the_hash_conversation](images/the_hash_conversation.png)
 
@@ -397,7 +398,7 @@ __Problem__: Find the hash for `c3p0` in the capture file, and then crack the pa
 ## Cracking It
 
 - From my previous cracking endeavors I know that this hash is an NTLM hash.
-  - Throw the following into a textfile and run `john -format=LM c3p0.txt`
+  - Throw the following into a textfile and run `john -format=LM c3p0.txt`.
 
 `c3p0.txt`:
 ```ntlm
@@ -435,6 +436,7 @@ c3p0:GOLDEN:1013:76E7144E64E6E414AAD3B435B51404EE:6F12C0AB327E099821BD938F39FAAB
 
 - Used John the Ripper on Problems 1-8.
 - Used hashcat on Problems 9 and 10.
+- Used John the Ripper on Team 4's Problem 8.
 
 -----
 
