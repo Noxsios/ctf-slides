@@ -368,6 +368,51 @@ Stopped: Sat Jul 17 15:32:35 2021
 
 -----
 
+## Team 4's Problem 8
+
+> I accidentally did all of Cat. 8 from the wrong pool of questions, whoops.
+
+__Problem__: Find the hash for `c3p0` in the capture file, and then crack the password.
+
+---
+
+### First Look
+
+- The first thing I do is go to `> Statistics > Conversations > TCP`
+  - I do this because odds are the hash will be contained in a TCP conversation.
+
+![tcp_converstations](images/tcp_conversations.png)
+
+---
+
+### Finding the Hash
+
+- The top two are useless to me, but finally I find the hash inside the __third__ conversation.
+  - For this I select each conversation, click `Follow Stream...` and skim through.
+
+![the_hash_conversation](images/the_hash_conversation.png)
+
+---
+
+## Cracking It
+
+- From my previous cracking endeavors I know that this hash is an NTLM hash.
+  - Throw the following into a textfile and run `john -format=LM c3p0.txt`
+
+`c3p0.txt`:
+```ntlm
+c3p0:1013:76E7144E64E6E414AAD3B435B51404EE:6F12C0AB327E099821BD938F39FAAB0D:::
+```
+
+`john --show c3p0.txt`:
+```
+c3p0:GOLDEN:1013:76E7144E64E6E414AAD3B435B51404EE:6F12C0AB327E099821BD938F39FAAB0D:::
+```
+
+> Answer: `GOLDEN`
+
+-----
+
 ## Lessons Learned
 
 - A good deal of cracking hashes is done by identifying the type, and making a few educated guesses.
